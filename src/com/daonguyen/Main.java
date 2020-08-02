@@ -220,11 +220,32 @@ public class Main {
         System.out.println();
     }
 
+    private static boolean isExistingCode(int code) {
+        boolean isExisting = false;
+
+        for (int i = 0; i < employees.size(); i++) {
+            if (employees.get(i).getCode() == code) {
+                isExisting = true;
+                System.out.println("This code is existing. Please enter another code!");
+                break;
+            } else {
+                isExisting = false;
+            }
+        }
+
+        return isExisting;
+    }
+
     private static void inputEmployee(Employee employee) {
-        System.out.print("Enter employee code: "); // should not enter duplicate code
-        int code = scanner.nextInt();
-        employee.setCode(code);
-        scanner.nextLine();
+        boolean flag = true;
+        int code = 0;
+
+        do {
+            System.out.print("Enter employee code: ");
+            code = scanner.nextInt();
+            employee.setCode(code);
+            scanner.nextLine();
+        } while (isExistingCode(code));
 
         System.out.print("Enter employee full name: ");
         String fullName = scanner.nextLine();
