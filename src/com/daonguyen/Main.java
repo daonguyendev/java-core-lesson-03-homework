@@ -4,6 +4,12 @@ import com.daonguyen.model.*;
 
 import java.util.*;
 
+/**
+ * Employee Manager
+ * Author: Dao Nguyen
+ * Date: 02/08/2020
+ * Version: 1.0
+ */
 public class Main {
     private static List<Employee> employees;
     private static Company company;
